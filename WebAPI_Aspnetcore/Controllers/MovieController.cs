@@ -18,6 +18,7 @@ namespace WebAPI_Aspnetcore.Controllers
         [Route("api/movies/search")]
         public async Task<MovieResponse> Get(string title)
         {
+
             var baseAddress = new Uri($"https://jsonmock.hackerrank.com/api/movies/");
             //search /? Title ={ title}
             using (var httpClient = new HttpClient())
@@ -30,6 +31,15 @@ namespace WebAPI_Aspnetcore.Controllers
 
                     List<Movies> listMovies = new List<Movies>();
 
+                   
+
+#if DEBUG 
+                    {
+                        objSerialize.total_pages = 2;
+
+                    }
+
+#endif
                     //BUSCANDO FILMES EM TODAS AS PAGINAS 
                     for (int i = 1; i <= objSerialize.total_pages; i++)
                     {

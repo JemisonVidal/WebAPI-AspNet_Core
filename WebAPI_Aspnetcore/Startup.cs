@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 using WebAPI_Aspnetcore.Models;
 
 namespace WebAPI_Aspnetcore
@@ -36,8 +37,7 @@ namespace WebAPI_Aspnetcore
             {
                 app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
+            app.UseHttpsRedirection();           
             app.UseMvc();
         }
     }
