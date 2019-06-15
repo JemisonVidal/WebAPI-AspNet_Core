@@ -31,8 +31,6 @@ namespace WebAPI_Aspnetcore.Controllers
 
                     List<Movies> listMovies = new List<Movies>();
 
-                   
-
 #if DEBUG 
                     {
                         objSerialize.total_pages = 2;
